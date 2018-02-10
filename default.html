@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="css/m.tracker.css">
+    <link rel="stylesheet" type="text/css" href="css/fonts.css">
+    <link rel="stylesheet" type="text/css" href="css/default.css">
+    <script type="text/javascript" src="../common/lib/shims.js"></script>
+  </head>
+  <body id="_dpz">
+    <div class="tracker__body">
+      <div class="tracker__object">
+        <div id="flashContent" class="">
+          <div class="tracker" id="intl-tracker">
+            <div class="header is-hidden">
+              <h1 id="trackerHeader"></h1>
+              <h3 id="trackerDescription" class="trackerDescription" aria-label="Tracker Description"></h3>
+            </div>
+            <div class="status">
+              <ol class="stageLabels">
+                <li id="stageLabel1" class="stageLabel" data-stagenumber="1" data-stagenumber-text="">
+                  <div class="labelText"></div>
+                  <div class="light"></div>
+                </li>
+                <li id="stageLabel2" class="stageLabel" data-stagenumber="2" data-stagenumber-text="">
+                  <div class="labelText"></div>
+                  <div class="light"></div>
+                </li>
+                <li id="stageLabel3" class="stageLabel" data-stagenumber="3" data-stagenumber-text="">
+                  <div class="labelText"></div>
+                  <div class="light"></div>
+                </li>
+                <li id="stageLabel4" class="stageLabel" data-stagenumber="4" data-stagenumber-text="">
+                  <div class="labelText"></div>
+                  <div class="light"></div>
+                </li>
+                <li id="stageLabel5" class="stageLabel" data-stagenumber="5" data-stagenumber-text="">
+                  <div class="labelText"></div>
+                  <div class="light"></div>
+                </li>
+              </ol>
+              <div id="statusBarBase" class="statusBarBase"></div>
+              <div id="statusBar" class="statusBar">
+                <ol>
+                  <li id="stage1" class="stage" data-stagenumber="1"><div>1</div></li>
+                  <li id="stage2" class="stage" data-stagenumber="2"><div>2</div></li>
+                  <li id="stage3" class="stage" data-stagenumber="3"><div>3</div></li>
+                  <li id="stage4" class="stage" data-stagenumber="4"><div>4</div></li>
+                  <li id="stage5" class="stage" data-stagenumber="5"><div>5</div></li>
+                </ol>
+              </div>
+              <p id="patentText" class="patentText"></p>
+              <p class="statusText">
+                <span id="leftStatus" class="leftStatus"></span>
+                <span id="rightStatus" class="rightStatus"></span>
+              </p>
+            </div>
+            <div id="errorOverlay" class="errorOverlay"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      var trackerLookup = !!location.search.match('trackerLookup');
+
+      document.addEventListener("DOMContentLoaded", function(event) {
+        if (trackerLookup) {
+          var el = document.querySelector(".tracker__body")
+          var className = "tracker__lookup";
+          if (el.classList)
+            el.classList.add(className);
+          else
+            el.className += ' ' + className;
+        } else {
+          var el = document.querySelector("#intl-tracker .header");
+          var className = "is-hidden";
+          if (el.classList)
+            el.classList.remove(className);
+          else
+            el.className = el.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+        }
+      });
+
+      window.addEventListener("message", function(event) {
+        var data = {};
+        if (typeof event.data === "string") try { data = JSON.parse(event.data); } catch (exception) { } 
+        if (event.origin === window.location.origin && data.type) {
+          document.body.className = data.lang;
+          switch (data.type) {
+            case "setFlavorText": {
+              if (data.major) document.getElementById("leftStatus").innerText = data.major;
+              document.getElementById("rightStatus").innerText = data.minor ? "- " + data.minor : "";
+              break;
+            }
+            case "setNonStatusText": {
+              if (data.patentText) document.getElementById("patentText").innerText = data.patentText;
+              if (data.trackerDescription) document.getElementById("trackerDescription").innerText = data.trackerDescription;
+              if (data.trackerHeader) document.getElementById("trackerHeader").innerText = data.trackerHeader;
+              if (data.num1) document.getElementById("stageLabel1").setAttribute("data-stagenumber-text", data.num1);
+              if (data.num1) document.getElementById("stageLabel2").setAttribute("data-stagenumber-text", data.num2);
+              if (data.num1) document.getElementById("stageLabel3").setAttribute("data-stagenumber-text", data.num3);
+              if (data.num1) document.getElementById("stageLabel4").setAttribute("data-stagenumber-text", data.num4);
+              if (data.num1) document.getElementById("stageLabel5").setAttribute("data-stagenumber-text", data.num5);
+              if (data.direction) document.getElementsByTagName("html")[0].setAttribute("dir", data.direction);
+              break;
+            }
+            case "setLabels": {
+              if (data.stage1) document.querySelector("#stageLabel1 .labelText").innerText = data.stage1;
+              if (data.stage2) document.querySelector("#stageLabel2 .labelText").innerText = data.stage2;
+              if (data.stage3) document.querySelector("#stageLabel3 .labelText").innerText = data.stage3;
+              if (data.stage4) document.querySelector("#stageLabel4 .labelText").innerText = data.stage4;
+              if (data.stage5) document.querySelector("#stageLabel5 .labelText").innerText = data.stage5;
+              break;
+            }
+            case "statusChange": {
+              if (data.status) document.getElementById("intl-tracker").setAttribute("data-stagestatus", data.status);
+              if (data.stage) document.getElementById("intl-tracker").setAttribute("data-currentstage", data.stage);
+              break;
+            }
+          }
+        }
+      },false );
+    </script>
+  </body>
+</html>

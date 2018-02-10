@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Pizza Pete Tracker Theme</title>
+  <link rel="stylesheet" type="text/css" href="../common/css/m.tracker.css">
+  <link rel="stylesheet" type="text/css" href="../common/css/fonts.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/pete.css">
+	<script type="text/javascript" src="../common/lib/phaser.min.js"></script>
+  <script type="text/javascript" src="../common/lib/jquery-3.1.1.min.js"></script>
+  <script type="text/javascript" src="../common/lib/shims.js"></script>
+  <script type="text/javascript" src="assets/js/pizzaPete.js"></script>
+  <script type="text/javascript" src="assets/js/lang.js"></script>
+</head>
+<body>
+    <div id="theme__canvas"><!-- Theme gets pumped into this div --></div>
+    <h1 id="theme__name" class="theme-name"></h1>
+    <div class="tracker" id="intl-tracker">
+      <div class="status">
+        <ol class="stageLabels">
+          <li id="stageLabel1" class="stageLabel" data-stagenumber="1" data-stagenumber-text="">
+            <div class="labelText"></div>
+            <div class="light"></div>
+          </li>
+          <li id="stageLabel2" class="stageLabel" data-stagenumber="2" data-stagenumber-text="">
+            <div class="labelText"></div>
+            <div class="light"></div>
+          </li>
+          <li id="stageLabel3" class="stageLabel" data-stagenumber="3" data-stagenumber-text="">
+            <div class="labelText"></div>
+            <div class="light"></div>
+          </li>
+          <li id="stageLabel4" class="stageLabel" data-stagenumber="4" data-stagenumber-text="">
+            <div class="labelText"></div>
+            <div class="light"></div>
+          </li>
+          <li id="stageLabel5" class="stageLabel" data-stagenumber="5" data-stagenumber-text="">
+            <div class="labelText"></div>
+            <div class="light"></div>
+          </li>
+        </ol>
+        <div id="statusBarBase" class="statusBarBase"></div>
+        <div id="statusBar" class="statusBar">
+          <ol>
+            <li id="stage1" class="stage" data-stagenumber="1"><div>1</div></li>
+            <li id="stage2" class="stage" data-stagenumber="2"><div>2</div></li>
+            <li id="stage3" class="stage" data-stagenumber="3"><div>3</div></li>
+            <li id="stage4" class="stage" data-stagenumber="4"><div>4</div></li>
+            <li id="stage5" class="stage" data-stagenumber="5"><div>5</div></li>
+          </ol>
+        </div>
+        <p id="patentText" class="patentText"></p>
+        <p class="statusText">
+          <span id="leftStatus" class="leftStatus"></span>
+          <span id="rightStatus" class="rightStatus"></span>
+        </p>
+      </div>
+      <div id="errorOverlay" class="errorOverlay"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+body {
+    left: -6px;
+    top: -2px;
+    height: 280px;
+    width: 862px;
+}
+
+.tracker {
+    top: 4.5em;
+    z-index: 0;
+    left: 1px;
+}
+
+.tracker .status {
+    background-color: #1b1b1b;
+}
+
+canvas {
+    background: transparent;
+    position: relative;
+}

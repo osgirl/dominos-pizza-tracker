@@ -1,0 +1,229 @@
+/* reset */
+body#_dpz {
+    width: 100%;
+    margin: 0;
+    background: transparent;
+}
+
+/* These styles are for the example tracker at stop of phone look up */
+body#_dpz .is-hidden {
+    display: none;
+}
+
+.tracker__lookup .tracker {
+    padding-bottom: 0;
+}
+
+.tracker__lookup .tracker .status {
+    width: auto;
+}
+
+.tracker__lookup .labelText {
+    font-size: 0.675em;
+}
+/* end look up */
+
+.tracker {
+    width: 99%;
+    margin: 0 auto 1em;
+    padding: 0.125em 0 3em;
+    border-radius: 10px;
+    position: relative;
+    top: 0;
+    right: 0.25em;
+    font: normal 16px/1.333333333 "One Dot Condensed Bold", "Arial Narrow", Arial, Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    box-shadow: 1px 3px 4px #888;
+
+
+    background: #c2c3c5; /* Old browsers */
+    background: -moz-linear-gradient(left, #c2c3c5 0%, #efefef 40%, #efefef 60%, #c2c3c5 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,#c2c3c5), color-stop(40%,#efefef), color-stop(60%,#efefef), color-stop(100%,#c2c3c5)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left, #c2c3c5 0%,#efefef 40%,#efefef 60%,#c2c3c5 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left, #c2c3c5 0%,#efefef 40%,#efefef 60%,#c2c3c5 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(left, #c2c3c5 0%,#efefef 40%,#efefef 60%,#c2c3c5 100%); /* IE10+ */
+    background: linear-gradient(to right, #c2c3c5 0%,#efefef 40%,#efefef 60%,#c2c3c5 100%); /* W3C */
+
+    background-color: hsl(0,0%,90%);
+    background-image: -webkit-repeating-linear-gradient(hsla(0,0%,100%,0) 0%, hsla(0,0%,100%,0) 6%, hsla(0,0%,100%, .1) 7.5%),
+    -webkit-repeating-linear-gradient(hsla(0,0%, 0%,0) 0%, hsla(0,0%, 0%,0) 4%, hsla(0,0%, 0%,.03) 4.5%),
+    -webkit-repeating-linear-gradient(hsla(0,0%,100%,0) 0%, hsla(0,0%,100%,0) 1.2%, hsla(0,0%,100%,.15) 2.2%),
+    -webkit-linear-gradient(left, hsl(0,0%,80%) 0%, hsl(0,0%,95%) 50%, hsl(0,0%,80%)100%);
+
+    background-image: -moz-repeating-linear-gradient(hsla(0,0%,100%,0) 0%, hsla(0,0%,100%,0) 6%, hsla(0,0%,100%, .1) 7.5%),
+    -moz-repeating-linear-gradient(hsla(0,0%, 0%,0) 0%, hsla(0,0%, 0%,0) 4%, hsla(0,0%, 0%,.03) 4.5%),
+    -moz-repeating-linear-gradient(hsla(0,0%,100%,0) 0%, hsla(0,0%,100%,0) 1.2%, hsla(0,0%,100%,.15) 2.2%),
+    -moz-linear-gradient(left, hsl(0,0%,80%) 0%, hsl(0,0%,95%) 50%, hsl(0,0%,80%)100%);
+
+    background-image: repeating-linear-gradient(hsla(0,0%,100%,0) 0%, hsla(0,0%,100%,0) 6%, hsla(0,0%,100%, .1) 7.5%),
+    repeating-linear-gradient(hsla(0,0%, 0%,0) 0%, hsla(0,0%, 0%,0) 4%, hsla(0,0%, 0%,.03) 4.5%),
+    repeating-linear-gradient(hsla(0,0%,100%,0) 0%, hsla(0,0%,100%,0) 1.2%, hsla(0,0%,100%,.15) 2.2%),
+    linear-gradient(left, hsl(0,0%,80%) 0%, hsl(0,0%,95%) 50%, hsl(0,0%,80%)100%);
+
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c2c3c5', endColorstr='#c2c3c5',GradientType=1 ); /* IE6-9 */
+
+}
+.tracker ol,
+.tracker ul,
+.tracker p {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.tracker .header {
+    margin: 0 auto;
+    padding: 0 3.5294118% 0 1%;
+    overflow: hidden;
+}
+.tracker .header h1,
+.tracker .header h2,
+.tracker .header h3,
+.tracker .header h4,
+.tracker .header h5 {
+    margin: 0;
+    font-weight: normal;
+}
+
+.tracker .header h1 {
+    width: 45%;
+    float: left;
+    text-transform: uppercase;
+    font-size: 3em; /* 16px 48px */
+    white-space: nowrap;
+    text-shadow: 1px 2px 3px #def, 0 0 0 #000, 1px 2px 3px #def;
+    color: #cf4d51;
+    color: rgba(224, 0, 26, 0.8);
+    padding-left: 20px;
+}
+.tracker .header h1 sup {
+    position: relative;
+    top: -1.5em;
+    font-size: 0.33333333em; /* 48px 16px */
+}
+.tracker .header h1:after{
+    content: "\00ae";
+    font-size: 0.75em;
+    vertical-align: top;
+}
+.tracker .header h3 {
+    width: 40%;
+    padding: 1em 0 0.666666667em;
+    float: left;
+    font-size: 0.75em; /* 14px 16px */
+    color: #484848;
+    text-align: left;
+}
+
+.CH-de .tracker .header h3,
+.CH-fr .tracker .header h3 {
+    float: right;
+}
+
+.MA-fr .tracker .header h3 {
+    width: 35%;
+    float: right;
+}
+
+.KH-km .tracker .header h3 {
+    float: right;
+}
+
+.KH-km .tracker .header h1 {
+    font-size: 1.95em;
+}
+
+.TH-th .tracker .header h1 {
+    white-space: normal;
+}
+
+body[class$="-ar"] .tracker .header h3 {
+    padding-left: 1em;
+}
+
+body[class$="-ar"] .tracker {
+    font-family: PizzaPressFill-AR,"One Dot Condensed Bold",Arial Narrow,Arial,Helvetica,sans-serif!important
+}
+
+.tracker .status {
+    height: 150px;
+    width: 92.9411765%;
+    margin: 0 auto;
+    clear: both;
+    border-radius: 10px;
+    position: relative;
+    background-color: #1e70a6;
+    box-shadow: inset -1px 3px 8px rgba(0, 0, 0, 0.5);
+}
+
+@media screen and (max-width: 640px) {
+    .tracker {
+        padding-bottom: 1.5em;
+    }
+    .tracker .header {
+        padding: 1em;
+    }
+    .tracker .header h1 {
+        width: 100%;
+        float: none;
+        padding-left: 0;
+        margin-bottom: 0.1875em;
+        font-size: 1.625em;
+        text-align: center;
+        text-shadow: 1px 1px 1px #def, 0 0 0 rgba(0, 0, 0, 0.5), 1px 1px 1px #def;
+    }
+    .tracker .header h3 {
+        width: 100%;
+        float: none;
+        text-align: center;
+        padding: 0;
+    }
+    .tracker .stageLabel:after {
+        display: none;
+    }
+    .tracker .status {
+        height: auto;
+    }
+    .tracker .stageLabels {
+        display: none;
+    }
+    .tracker .statusBarBase,
+    .tracker .statusBar {
+        top: 14px;
+        margin: 0 3%;
+        width: 94%;
+    }
+    .tracker .statusText {
+        position: static;
+        line-height: 1;
+        padding: 90px 0 12px;
+    }
+    .tracker .patentText {
+        color: #000;
+        top: auto;
+        bottom: -2em;
+        right: 1em;
+    }
+    .tracker .statusBar .stage[data-stagenumber="1"] {
+        width: 16.571429%;
+        margin-left: -4.714286%;
+    }
+}
+
+@media screen and (min-width: 640px) {
+    .IT-it .tracker .header h3 {
+        width: 30%;
+    }
+
+    .TH-th .tracker .header h1 {
+        width: 70%;
+        font-size: 2em;
+    }
+
+    .TH-th .tracker .header h3 {
+        float: right;
+        width: 26%;
+        padding-top: 0;
+    }
+}
